@@ -1,7 +1,7 @@
 # Little Pig Navigation - ROS Package
 ## Installation
 
-This REPO contains four ROS packaged and referances a 5th.
+This REPO contains four ROS packages and referances a 5th.
 ### MAVROS setup:
 ```bash
 sudo apt-get install ros-melodic-mavros

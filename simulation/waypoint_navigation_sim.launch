@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <env name="ROSCONSOLE_CONFIG_FILE" value="$(find little_pig_ctrl)/config/custom_rosconsole.conf"/>
+
+    <include file="$(find little_pig_gazebo)/launch/simulation.launch" />
+
+    <include file="$(find little_pig_ctrl)/teleop.launch" />
+
+    <include file="$(find little_pig_navigation)/gmapping.launch" />
+    <!-- there is a hector slam one that is commented out on husky -->
+    <!-- there is a run sim here on the husky one -->
+
+    <!-- rviz -->
+
+    <!-- move base nav . launch -->
+    <!-- safety node to disable vehicle safety_node.launch -->
+</launch>

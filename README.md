@@ -39,6 +39,12 @@ cd src/
 git clone https://github.com/gareth-cross/rviz_satellite.git
 catkin_make
 ```
+
+##TESTING
+To test the packages, make sure to run the CHMOD commands, then run 
+```bash
+roslaunch little_pig_navigation navigation.launch
+```
       
 
 

@@ -1,0 +1,12 @@
+<launch>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
+    <rosparam command="load" file="$(find little_pig_navigation)/params/ekf_1.yaml" />
+
+    <remap from="cmd_vel" to="ackermann_controller/cmd_vel"/> <!-- This might not be working correctly -->
+    <remap from="odometry/filtered" to="odom_ekf_1/filtered"/>
+    <remap from="accel/filtered" to="accel_ekf_1/filtered"/>
+
+  </node>
+
+</launch>

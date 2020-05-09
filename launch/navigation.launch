@@ -7,11 +7,16 @@
 -->
 
 <launch>
-	<!--<node pkg="tf" type="static_transform_publisher" name="odom_to_map"
-    	args="0.1 0  0  -1.570796327 0 -1.570796327  /map /odom 100" /> -->
 
-	<!-- <include file="$(find little_pig_navigation)/launch/mavros.launch" /> -->
-	<include file="$(find little_pig_navigation)/launch/ekf_template.launch" />
-	<!-- <include file="$(find little_pig_navigation)/launch/lidar.launch" /> -->
-	<include file="$(find little_pig_navigation)/launch/gmapping.launch" />
+	<!-- Launches gmapping instance, only necessary in learning -->
+	<!-- <include file="$(find little_pig_navigation)/launch/gmapping.launch" /> -->
+
+	<!-- Launches robot localization instance 1 -->
+	<include file="$(find little_pig_navigation)/launch/ekf_1.launch" />
+	
+	<!-- Launches robot localization instance 2 including navsat corrections -->
+	<!-- <include file="$(find little_pig_navigation)/launch/ekf_2.launch" /> -->
+
+	<!-- Launches navsat Transform instance -->
+	<!-- <include file="$(find little_pig_navigation)/launch/navsat.launch" /> -->
 </launch>

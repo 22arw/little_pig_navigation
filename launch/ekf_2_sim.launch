@@ -1,0 +1,15 @@
+<launch>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se2" clear_params="true">
+    <rosparam command="load" file="$(find little_pig_navigation)/params/ekf_2_sim.yaml" />
+    <remap from="odometry/filtered" to="odom_ekf_2/filtered"/>
+    <remap from="accel/filtered" to="accel_ekf_2/filtered"/>
+    
+    <!--  Placeholder for output topic remapping
+    <remap from="odometry/filtered" to="odom"/>
+    <remap from="accel/filtered" to="imu"/>
+    -->
+
+  </node>
+
+</launch>

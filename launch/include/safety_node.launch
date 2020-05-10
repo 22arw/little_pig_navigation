@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node ns="/basic_laser_pig/simulation" pkg="little_pig_navigation" type="safety_node" name="safety_node" output="screen"/>
+
+</launch>

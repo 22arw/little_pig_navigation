@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <group ns="little_pig_navigation">
+  <!-- Load current navsat parameters -->
+  <rosparam command="load" file="$(find little_pig_navigation)/params/navsat_params_sim.yaml" />
+
+  <!-- Start calibration node -->
+  <node ns="/basic_laser_pig/simulation" name="calibrate_heading" pkg="little_pig_navigation" type="calibrate_heading" output="screen" />
+    <!-- set x linear velocity (m/s) 
+    <param name="/basic_laser_pig/simulation/ackermann_controller/cmd_vel/x_vel" value="0.5" />
+
+    set how long to publish velocity command (s) -->
+    <param name="/basic_laser_pig/simulation/ackermann_controller/x_vel_time" value="10" />
+    
+  </group>
+
+</launch>
+

@@ -13,5 +13,15 @@
 	<include file="$(find little_pig_navigation)/launch/mavros.launch" />
 	<include file="$(find little_pig_navigation)/launch/ekf_template.launch" />
 	<include file="$(find little_pig_navigation)/launch/lidar.launch" />
+
+  <launch>
+    <include ns="lidar0" file="$(find little_pig_navigation)/launch/lidar.launch">
+        <arg name="serial_port" value="/dev/ttyUSB0"/>
+    </include>
+    <include ns="lidar1" file="$(find little_pig_navigation)/launch/lidar.launch">
+        <arg name="serial_port" value="/dev/ttyUSB1"/>
+    </include>
+  </launch>
+
 	<include file="$(find little_pig_navigation)/launch/gmapping.launch" />
 </launch>

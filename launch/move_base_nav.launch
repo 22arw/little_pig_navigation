@@ -13,9 +13,9 @@
     
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
 
-    <remap from="odom" to="/little_pig_navigation/odometry/filtered_map" />
+    <remap from="odom" to="/basic_laser_pig/simulation/odom_ekf_1/odom_filtered" />
     <remap from="cmd_vel" to="/basic_laser_pig/simulation/ackermann_controller/cmd_vel" />
-    <remap from="/map" to="/little_pig_navigation/map" />
+    <remap from="/map" to="/basic_laser_pig/simulation/map" />
 
   </node>
 </launch>

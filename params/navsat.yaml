@@ -1,0 +1,11 @@
+frequency: 30
+delay: 3
+
+magnetic_declination_radius: 0
+
+zero_altitude: true
+yaw_offset: 0.0 #1.57
+broadcast_utm_transform: true
+broadcast_utm_transform_as_parent_frame: false
+publish_filtered_gps: true
+use_odometry_yaw: true

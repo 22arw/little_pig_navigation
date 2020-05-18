@@ -187,7 +187,7 @@ landing_target:
     fov_x: 2.0071286398   # default: 115 [degrees]
     fov_y: 2.0071286398
   tf:
-    send: true
+    send: false
     listen: false
     frame_id: "landing_target"
     child_frame_id: "camera_center"
@@ -242,7 +242,7 @@ wheel_odometry:
   child_frame_id: "base_link" # body-fixed frame
   vel_error: 0.1              # wheel velocity measurement error 1-std (m/s)
   tf:
-    send: true
+    send: false
     frame_id: "map"
     child_frame_id: "base_link"
 

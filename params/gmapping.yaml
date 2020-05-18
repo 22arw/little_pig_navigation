@@ -1,0 +1,34 @@
+map_update_interval: 1.0 #This is 0.5 in waypoint_nav package
+
+maxUrange:  15
+maxRange:   40
+sigma:      0.05  #was 0.05
+kernelSize: 1     # was 1
+lstep:      0.05  #was 0.05
+astep:      0.05  #was 0.05
+iterations: 5
+lsigma:     0.075
+ogain:      3.0
+srr:        0.01
+srt:        0.02
+str:        0.01
+stt:        0.02
+xmin:       -40.0
+ymin:       -40.0
+xmax:       40.0
+ymax:       40.0
+delta:      0.1
+lskip:      0
+
+minimumScore:       35  #This is 0 in waypoint_nav package
+linearUpdate:       0.2
+angularUpdate:      0.25
+temporalUpdate:     5   #This is -1.0 in waypoint_nav package
+resampleThreshold:  0.5
+particles:          50  #This is 10 in waypoint_nav package
+throttle_scans:     1
+
+llsamplerange:      0.01
+llsamplestep:       0.01
+lasamplerange:      0.005
+lasamplestep:       0.005

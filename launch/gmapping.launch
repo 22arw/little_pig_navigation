@@ -1,33 +1,36 @@
 <launch>
-  <arg name="scan_topic"  default="/basic_laser_pig/scan" /> <!-- This needs fixed for later use with basic_laser_pig -->
+
+  <arg name="name" default="gmapping"/>
+
+  <arg name="scan_topic"  default="LiDAR/front_scan" /> <!-- This needs fixed for later use with basic_laser_pig, would be awesome for relative NS -->
   <arg name="base_frame"  default="base_link"/> <!-- This should be fine, I believe it uses the tf -->
   <arg name="odom_frame"  default="odom_gmapping"/> <!-- This is how it works in waypoint_nav -->
-  <arg name="map_frame"   default="odom"/> <!-- This needs more work odom and map aren't the same rotationally, should be map -->
+  <arg name="map_frame"   default="map"/> <!-- This needs more work odom and map aren't the same rotationally, should be map -->
   
- <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+ <node pkg="gmapping" type="slam_gmapping" name="$(arg name)" output="screen">
     <param name="base_frame" value="$(arg base_frame)"/>
     <param name="odom_frame" value="$(arg odom_frame)"/>
     <param name="map_frame" value="$(arg map_frame)"/>
-    <param name="map_update_interval" value="1.0"/> <!-- This is 0.5 in waypoint_nav package -->
+    <!-- <param name="map_update_interval" value="1.0"/> <!- This is 0.5 in waypoint_nav package ->
     <param name="maxUrange" value="15"/>
     <param name="maxRange" value="40"/>
-    <param name="sigma" value="0.05"/> <!-- was 0.05 -->
-    <param name="kernelSize" value="1"/> <!--  was 1 -->
-    <param name="lstep" value="0.05"/> <!-- was 0.05 -->
-    <param name="astep" value="0.05"/> <!-- was 0.05 -->
+    <param name="sigma" value="0.05"/> <!- was 0.05 ->
+    <param name="kernelSize" value="1"/> <!-  was 1 ->
+    <param name="lstep" value="0.05"/> <!- was 0.05 ->
+    <param name="astep" value="0.05"/> <!- was 0.05 ->
     <param name="iterations" value="5"/>
     <param name="lsigma" value="0.075"/>
     <param name="ogain" value="3.0"/>
-    <param name="minimumScore" value="35"/> <!-- This is 0 in waypoint_nav package -->
+    <param name="minimumScore" value="35"/> <!- This is 0 in waypoint_nav package ->
     <param name="srr" value="0.01"/>
     <param name="srt" value="0.02"/>
     <param name="str" value="0.01"/>
     <param name="stt" value="0.02"/>
     <param name="linearUpdate" value="0.2"/>
     <param name="angularUpdate" value="0.25"/>
-    <param name="temporalUpdate" value="5"/> <!-- This is -1.0 in waypoint_nav package -->
+    <param name="temporalUpdate" value="5"/> <!- This is -1.0 in waypoint_nav package ->
     <param name="resampleThreshold" value="0.5"/>
-    <param name="particles" value="50"/> <!-- This is 10 in waypoint_nav package -->
+    <param name="particles" value="50"/> <!- This is 10 in waypoint_nav package ->
     <param name="throttle_scans" value="1"/>
     <param name="lskip" value="0"/>
 
@@ -40,7 +43,8 @@
     <param name="llsamplerange" value="0.01"/>
     <param name="llsamplestep" value="0.01"/>
     <param name="lasamplerange" value="0.005"/>
-    <param name="lasamplestep" value="0.005"/>
+    <param name="lasamplestep" value="0.005"/> -->
     <remap from="scan" to="$(arg scan_topic)"/>
+    <remap from="map" to="$(arg name)/map"/>
   </node>
 </launch>

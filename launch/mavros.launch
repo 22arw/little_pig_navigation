@@ -10,6 +10,9 @@
 	<arg name="fcu_protocol" default="v2.0" />
 	<arg name="respawn_mavros" default="false" />
 
+	<remap from="/mavros/global_position/global" to="/GPS/fix"/>
+	<remap from="/mavros/imu/data" to="/IMU/data"/>
+
 	<include file="$(find mavros)/launch/node.launch">
 		<arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
 		<arg name="config_yaml" value="$(find little_pig_navigation)/params/mavros_config.yaml" />

@@ -5,7 +5,7 @@
   <arg name="scan_topic"  default="LiDAR/front_scan" /> <!-- This needs fixed for later use with basic_laser_pig, would be awesome for relative NS -->
   <arg name="base_frame"  default="base_link"/> <!-- This should be fine, I believe it uses the tf -->
   <arg name="odom_frame"  default="odom_gmapping"/> <!-- This is how it works in waypoint_nav -->
-  <arg name="map_frame"   default="map"/> <!-- This needs more work odom and map aren't the same rotationally, should be map -->
+  <arg name="map_frame"   default="odom"/> <!-- This needs more work odom and map aren't the same rotationally, should be map -->
   
  <node pkg="gmapping" type="slam_gmapping" name="$(arg name)" output="screen">
     <param name="base_frame" value="$(arg base_frame)"/>

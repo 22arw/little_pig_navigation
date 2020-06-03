@@ -19,7 +19,7 @@
         
         <remap from="imu/data" to="mavros/imu/data"/>
         <remap from="gps/fix" to="/mavros/global_position/raw/fix"/>
-        <remap from="odometry/filtered" to="odom_ekf_2/filtered"/>
+        <remap from="odometry/filtered" to="/odom_ekf_2/filtered"/>
         <remap from="odometry/gps" to="odom_navsat/filtered"/>
         <remap from="gps/filtered" to="gps_navsat/filtered"/>
 
